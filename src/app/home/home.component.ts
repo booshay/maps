@@ -9,13 +9,15 @@ import {DataService} from '../data.service';
 export class HomeComponent implements OnInit {
 
 returnedRoute: {};
-key = 'routes';
-key2 = 'summary';
+BAF = '42.159385,-72.720768';
+BOS = '42.374872,-71.024094';
+TAN = '41.874655,-71.015327';
+
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.dataService.getData()
-     .subscribe(data => this.returnedRoute = data[this.key][0][this.key2]);
+    this.dataService.getData(this.BAF)
+     .subscribe(data => this.returnedRoute = data);
   }
 
 }
